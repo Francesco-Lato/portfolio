@@ -1,0 +1,515 @@
+:root {
+    --amarillo: goldenrod;
+    --negro: rgb(19, 18, 18);
+    --morado: rgb(78, 36, 48);
+    --gris: rgb(79, 79, 79);
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: outfit;
+}
+
+/* HEADER */
+
+header {
+    background-color: goldenrod;
+}
+
+
+.logo {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+    color: darkcyan;
+}
+
+nav li {
+    list-style: none;
+    padding: 0.3em;
+}
+
+nav ul li:hover {
+    background-color: goldenrod;
+}
+
+nav a {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+
+#menu-check {
+    display: none;
+}
+
+#menu-check:not(:checked) ~ nav {
+    display:none;
+   }
+
+#menu-check:checked ~ nav {
+    display: block;
+}
+
+#menu {
+    display: block;
+    color: darkcyan;
+    font-weight: bold;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+
+#menu:hover {
+    color: cadetblue;
+}
+
+#menu-cerrar {
+    display: none;
+}
+
+#menu-check:checked ~ label #menu-abrir {
+    display: none;
+}
+/* } el ~ seleciona el hermano posterior a #menu-check */
+
+#menu-check:checked ~ label #menu-cerrar {
+    display: block;
+}
+
+header nav {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    background-color: var(--amarillo);
+    opacity: 0.9;
+    padding: 1rem;
+    text-align: right;
+   
+}
+
+.nav-desktop {
+    display: none;
+}
+
+#scroll-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--amarillo);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
+    z-index: 1;
+}
+
+#scroll-top-button:hover {
+    background-color: darkcyan;
+    transform: scale(1.2);
+}
+
+
+
+/* SECTION HOLA */
+.hola {
+    background-image: url(../img/04.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    *background-attachment: fixed;
+    *background: rgb(2,0,36);
+    *background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(151,69,98,1) 0%, rgba(79,138,173,1) 48%, rgba(0,212,255,1) 100%); 
+    font-family: outfit;
+    *background-color: darkcyan;
+    color: white;
+    height: 40vh;
+}
+
+.texto {
+    padding: 1rem;
+}
+
+.texto h2 {
+    font-size: 5rem;
+}
+
+.texto p{
+    padding-left: 0.3rem;
+}
+
+.texto p {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+    
+}
+
+/* Cabeceras */
+
+.cab-quehago h2, .cab-quiensoy h2, .cab-mistrabajos h2, .cab-herramientas h2, .cab-gracias h2 {
+    font-family: outfit;
+    padding: 1rem;
+}
+
+.cab-quiensoy {
+    background-color: rgb(180, 184, 187);
+    color: var(--negro);
+}
+
+.cab-quehago {
+    background-color: rgb(213, 215, 218);
+    color: var(--negro);
+}
+
+.cab-mistrabajos {
+    background-color: rgb(235, 237, 241);
+    color: var(--negro);
+}
+
+.cab-herramientas {
+    background-color: rgb(247, 247, 249);
+    color: var(--negro);
+}
+
+.quehago {
+    background-image: url(../img/one.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    font-family: outfit;
+    color: white;
+}
+
+.quiensoy {
+    background-image: url(../img/intro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    font-family: outfit;
+    color: white;
+}
+
+.quehago-texto, .quiensoy-texto {
+    padding: 1rem;
+}
+
+.quehago-texto h2, .quiensoy-texto h2 {
+    font-size: 4rem;
+}
+
+.quehago-texto p, .quiensoy-texto p {
+    margin-top: 1rem;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+/* TRABAJOS */
+.visibledesktop {
+    display: none;
+}
+.trabajos {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100vw;
+    justify-items:center;
+    animation: scroll 20s linear infinite;
+}
+
+.wrapper img {
+    width: 100vw;
+}
+
+@keyframes scroll {
+    to {
+        translate: calc(-5 * 100vw)
+    }
+    
+}
+
+/* Herramientas */
+
+.iconos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    justify-content: center;
+}
+
+.iconos img {
+    width: 15%;
+    flex: 0 1 100px;
+    padding: 1rem;
+}
+
+
+/* CONTACTO */
+
+.cab-formulario {
+    text-align: center;
+    margin: 1rem;
+}
+
+.cab-formulario h2 {
+    margin-bottom: 1rem;
+}
+
+.contacto {
+    font-family: outfit;
+    font-weight: lighter;
+}
+
+.foto {
+    text-align: center;
+    background-color: rgb(247, 247, 249);
+}
+
+.foto img{
+    width: 50%;  
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes i {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.redes a {
+    color: var(--gris);
+}
+
+.contactos-texto {
+    margin:2rem;
+}
+
+.contactos-texto h3{
+    text-align: center;
+}
+
+.caja-contactos {
+    margin-bottom: 2rem;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: var(--amarillo);
+}
+
+.doscuatro {
+    font-family: outfit;
+    font-size: 1rem;
+}
+
+.footer-texto {
+    text-align: center;
+    padding: 2rem 0rem 2rem; 
+    font-size: 1.5rem;
+    color: var(--negro-gris);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.footer-texto h3 {
+    font-weight: 400;
+}
+
+
+
+
+/* DESKTOP */
+
+@media screen and (min-width:680px) {
+
+   
+    
+    #menu, #menu-check {
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-desktop{
+        display: inline-block;
+    }
+
+    .nav-desktop ul {
+        display: flex;
+    }
+
+    .nav-desktop ul a{
+        text-decoration: none;
+        color: var(--negro)
+    }
+
+    .nav-desktop ul a:hover{
+        color: var(--morado)
+    }
+
+    .nav-desktop ul a li{
+        list-style: none;
+        padding: 1rem;
+    }
+
+    .hola {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+   
+    .quiensoyytexto, .quehagoytexto, .herramientasytexto {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        *height: 400px;
+    }
+
+    .quehago-texto, .quiensoy-texto {
+        width: 70%;
+        font-size: 1.6rem;
+    }
+
+    .cab-quiensoy, .cab-quehago, .cab-herramientas {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .quiensoy, .quehago {
+        grid-column: 2/3;
+        height: 400px;
+    }
+
+    .section-trabajos {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        height: 100vh;
+    }
+
+    .wrapper {
+        grid-auto-columns: 70vw;
+    }
+    
+    .wrapper img {
+        width: auto;
+        height: 100vh;
+    }
+
+    .visibledesktop {
+        display: block;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        font-size: 5rem;
+    }
+
+    .visiblemovil {
+        display: none;
+    }
+
+    .cab-herramientas h2, .cab-quiensoy h2, .cab-quehago h2, .cab-mistrabajos h2 {
+        font-size: 3rem;
+    }
+
+    .iconos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1rem;
+        place-items: center;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .iconos img {
+        width: 70%;
+    }
+
+    .graciasytexto {
+        display: grid;
+    }
+
+    .cab-gracias h2 {
+        font-size: 6rem;
+    }
+
+    .graciasytexto {
+        grid-template-columns: 1fr 4fr;
+    }
+  
+    .foto {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .cab-gracias h2 {
+        color: var(--amarillo);
+    }
+
+    .redes i {
+        font-size: 4rem;
+    }
+
+    .redes a{
+        transition: transform 0.3s ease; 
+    }
+    
+    .redes a:first-child:hover {
+        transform: scale(1.2);
+        color:cornflowerblue
+    }
+
+    .redes a:nth-child(2):hover {
+        transform: scale(1.2);
+        color:blueviolet;
+    }
+
+    .redes a:nth-child(3):hover {
+        transform: scale(1.2);
+        color:deeppink;
+    }
+
+}
